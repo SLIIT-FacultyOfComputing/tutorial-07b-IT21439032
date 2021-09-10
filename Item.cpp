@@ -5,7 +5,14 @@ using namespace std;
 // 4. Implement Default Constructor Implementation
 // 5. Implement Overloaded Constructor Implementation
 // 6. Implement Destructor (display "Destructor Called")
-
+Item::Item(){
+  itemCode = 0;
+  unitPrice = 0;
+}
+Item::Item(int code, float price){
+  itemCode = code;
+  unitPrice = price;
+}
 void Item::setDiscount(float pdiscount) {
   discount = pdiscount;
 }
@@ -21,4 +28,7 @@ float Item::discountedPrice() {
 void Item::display() {
   cout << "Item : " << itemCode << endl;
   cout << "Discounted Price " << discountedPrice() << endl;
+}
+Item::~Item(){
+  cout<< "Destructor Called" << endl;
 }
